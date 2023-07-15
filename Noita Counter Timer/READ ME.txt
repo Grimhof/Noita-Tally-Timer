@@ -1,0 +1,58 @@
+	OBS Source
+Create a Image Source called "Boss_Icon" and add the Boss_Logo.png
+
+Create a TextGDI+ Source called "Boss Count" and change the font to "press_start_2p"
+Make text 0
+Change font color to #aa0000
+
+Create a Image Source called "Shift_Icon" and add the Fungal_Logo.png
+
+Create a TextGDI+ Source called "Shift Count" and change the font to "press_start_2p"
+Make text 0
+Change font color to #ff63b7
+
+Create a TextGDI+ Source called "Shift Timer" and change the font to "press_start_2p"
+Make text 00:00
+Change font color to #ff63b7
+
+Create a Media Source called "Shift Bell" and use mp3 file included
+Uncheck "Restart playback when source becomes active"
+In Audio Mixer advanced properties make audio monitoring "Monitor and Output"
+Note: If you switch between multiple scenes I do not know if it will work if you are not on the scene with the audio source. If it does not, make a copy of the source in every scene you will use.
+------------------------------------------------------------
+------------------------------------------------------------
+	Scripts
+In OBS go to Tools > Scripts and add the Counter, Counter2, and Timer Script.
+
+	In Counter
+Text Source - Boss Count
+Format Text - %d
+Start Number - 0
+Step Number - 1
+
+Name the hotkeys whatever you want
+Example Boss Reset, Boss Up, Boss Down
+
+	In Counter2
+Text Source - Shift Count
+Format Text - %d
+Start Number - 0
+Step Number - 1
+
+Name the hotkeys whatever you want
+Example Shift Reset, Shift Up, Shift Down
+
+	In Timer
+Text Source - Shift Timer
+Sound Source - Shift Bell
+-------------------------------------------------------------------
+Restart OBS and then Set Hotkeys in settings
+	Hotkeys
+Make Boss Reset, Shift Reset, and Zero Timer the same hotkey
+Make Shift Up, and Reset Timer the same hotkey
+
+-----------------------------------
+NOTE
+
+Toggle Timer Hotkey does not currently work, the plan is to make it ESC so the timer pauses when the game pauses. But the rest of the thing works for now.
+-----------------------------------
